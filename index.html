@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="headline">Todo</div>
+    <div class="container">
+        <div class="content">
+            <div class="todo">
+
+                <div class="list">
+                    <div class="list-head">
+                        <div class="to-do-list">To-do List</div>
+                        <button class="search-button" ><img class="search" src="Assets/search.png" alt="search"></button>
+                            
+                    </div>            
+
+                </div>
+                
+                <div id="list-container">
+                    <div id="create-todo-message">Create To-do</div>
+                    <ul id="list-items">
+                        
+                    </ul>
+                </div>
+
+                
+
+                <div class="create-list">
+                    <input id="create-todo" type="text" placeholder="create new todo">
+                    <img onclick="addTask()" class="add" src="Assets/add.png" alt="add">
+                </div>
+            </div>
+
+
+
+            <div class="task">
+                <div class="task-title">
+                    <h2><div id="title-text"></div></h2>
+                    <button class="title-search"><img class="title-search1" src="Assets/search.png" alt="search"></button>
+                </div>
+
+                <div id="task-content">
+                    <div id="select-todo-message">Select To-do List</div>
+                </div>
+
+
+                <div class="task-menu">
+                    <button class="plus-btn"><img class="plus" src="Assets/plus.png" alt="plus"></button>
+                    <button class="clean-btn"><img class="clean" src="Assets/clean.png" alt="clean"></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+<script src="script.js"></script>
+    
+</body>
+</html>

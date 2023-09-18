@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+.headline {
+  height: 8%;
+  background-color: black;
+  color: aliceblue;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 7px 0 7px 3rem;
+}
+
+.container {
+  width: 100%;
+  height: 92%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+.container .content {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .content .todo {
+  width: 30%;
+  height: 400px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px #eaeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.container .content .todo .list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.container .content .todo .list .list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+.container .content .todo .list .list-head .to-do-list {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.container .content .todo .list .list-head .search-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.container .content .todo .list .list-head .search-button .search {
+  width: 20px;
+  height: 20px;
+}
+.container .content .todo #list-container {
+  flex-grow: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container .content .todo #list-container ul {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.container .content .todo #list-container ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  padding: 2px 5px;
+  cursor: pointer;
+  position: relative;
+}
+.container .content .todo #list-container ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  right: 2px;
+}
+.container .content .todo #list-container ul li span img {
+  width: 20px;
+  height: 20px;
+}
+.container .content .todo #list-container ul li:hover {
+  background: #e2e2e2;
+}
+.container .content .todo #list-container #create-todo-message {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a7a7a7;
+  font-size: 25px;
+  font-weight: 500;
+}
+.container .content .todo .create-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px 8px 8px;
+}
+.container .content .todo .create-list #create-todo {
+  width: 83%;
+  font-size: medium;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.container .content .todo .create-list .add {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+.container .content .task {
+  width: 65%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px #eaeaea;
+  margin-left: 30px;
+  padding: 0 1rem;
+}
+.container .content .task .task-title {
+  height: 14%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .content .task .task-title #title-text {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 2rem;
+}
+.container .content .task .task-title .title-search {
+  border: none;
+  outline: none;
+  background: none;
+}
+.container .content .task .task-title .title-search .title-search1 {
+  width: 25px;
+  height: 25px;
+}
+.container .content .task #task-content {
+  height: 76%;
+}
+.container .content .task #task-content #select-todo-message {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a7a7a7;
+  font-size: 30px;
+  font-weight: 500;
+}
+.container .content .task .task-menu {
+  display: flex;
+  height: 10%;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .content .task .task-menu .plus-btn {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+.container .content .task .task-menu .plus-btn .plus {
+  width: 100%;
+  height: 100%;
+}
+.container .content .task .task-menu .clean-btn {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+.container .content .task .task-menu .clean-btn .clean {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

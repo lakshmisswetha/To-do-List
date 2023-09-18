@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    height: 100vh;
+}
+
+.headline{    
+    height: 8%;
+    background-color: black;
+    color:aliceblue;
+    font-size: 35px;
+    font-weight:500;
+    line-height: 1.2;
+    padding: 7px 0 7px 3rem;
+    
+}
+.container{
+    width: 100%;
+    height: 92%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    .content{
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: space-between;
+        .todo{
+            width: 30%;
+            height: 400px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px #eaeaea;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 8px;
+            padding-right: 8px;
+            .list{
+                display: flex;
+                flex-direction: column; 
+                margin-top: 5px;
+                .list-head{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 12px 0;
+                    .to-do-list{
+                        font-size:1.8rem;
+                        font-weight: 500;
+                        line-height: 1.2;
+                    }
+                    .search-button{
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                        .search{
+                            width: 20px;
+                            height: 20px;
+                            
+                        }
+                    }
+                    
+                    
+                }
+                
+            }
+            #list-container{
+                flex-grow: 1;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                ul {                
+                    display: flex;
+                    flex-direction: column-reverse;
+                    li{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 4px;
+                        border-radius: 3px;
+                        padding: 2px 5px;
+                        cursor: pointer;
+                        position: relative;
+                        
+
+                        span{
+                            position: absolute;
+                            right: 0;
+                            top: 5px;
+                            right: 2px;
+                            
+                            img{
+                                width: 20px;
+                                height: 20px;
+                            }
+                            
+                        }
+                                            
+                    }
+                }
+
+                ul li:hover{
+                    background:#e2e2e2;;
+                }
+                #create-todo-message{
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #a7a7a7;
+                    font-size: 25px;
+                    font-weight: 500;
+                }
+
+            }
+
+            
+            
+            
+            .create-list{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 8px 8px 8px;
+                #create-todo{
+                    width: 83%;
+                    font-size:medium;
+                    padding-left:5px;
+                    display: flex;
+                    align-items: center;
+                    
+                }
+                .add{
+                    width: 28px;
+                    height: 28px;
+                    cursor: pointer;
+
+                }
+            }
+        }
+        .task{
+            width: 65%;
+            height: 100%;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px #eaeaea;
+            margin-left: 30px;            
+            padding: 0 1rem;
+            .task-title{
+                height: 14%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                #title-text{
+                    font-weight: 500;
+                    line-height: 1.2;
+                    font-size: 2rem;
+                }
+                .title-search{
+                    border: none;
+                    outline: none;
+                    background: none;
+                    .title-search1{
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+            #task-content{
+                height: 76%;
+                #select-todo-message{
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #a7a7a7;
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+            }
+            .task-menu{
+                display: flex;
+                height: 10%;
+                justify-content: flex-end;
+                align-items: center;
+                .plus-btn{
+                    border: none;
+                    outline: none;
+                    border-radius: 50%;
+                    height: 35px;
+                    width: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 10px;
+                    padding: 5px;
+                    cursor: pointer;
+                    .plus{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .clean-btn{
+                    border: none;
+                    outline: none;
+                    border-radius: 50%;
+                    height: 35px;
+                    width: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 10px;
+                    padding: 5px;
+                    cursor: pointer;
+                    .clean{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
