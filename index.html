@@ -16,14 +16,19 @@
                 <div class="list">
                     <div class="list-head">
                         <div class="to-do-list">To-do List</div>
-                        <button class="search-button" ><img class="search" src="Assets/search.png" alt="search"></button>
+                        <button onclick="searchOnL()" class="search-button" ><img class="search" src="Assets/search.png" alt="search"></button>
                             
+                    </div>
+                    <div class="search-list">
+                        <input class="search-input" type="text" placeholder="Search">
+                        <button onclick="searchOffL()" class="close-button"><img class="close" src="Assets/close.png" alt="closebtn"></button>
                     </div>            
 
                 </div>
                 
                 <div id="list-container">
                     <div id="create-todo-message">Create To-do</div>
+                    <div id="notFound"> Result Not Found !!</div>
                     <ul id="list-items">
                         
                     </ul>
@@ -42,17 +47,42 @@
             <div class="task">
                 <div class="task-title">
                     <h2><div id="title-text"></div></h2>
-                    <button class="title-search"><img class="title-search1" src="Assets/search.png" alt="search"></button>
+                    <button onclick="searchOnR()" class="title-search"><img class="title-search1" src="Assets/search.png" alt="search"></button>
+                </div>
+
+                <div class="search-task-items">
+                    <input class="task-item-search" type="text" placeholder="Search">
+                    <button onclick="searchOffR()" class="clear-button"><img class="clearbtn" src="Assets/close.png" alt="closebtn"></button>
                 </div>
 
                 <div id="task-content">
                     <div id="select-todo-message">Select To-do List</div>
+                    <div id="result-not-found">Result Not Found !!</div>
+                    
+
+
+                    <ul id="task-items-container">
+                        
+                         <!-- <li class="task-item">
+                            <div class="input-fields">
+                                <input class="checkbox" type="checkbox">
+                                <form action="">
+                                    <input type="text" class="item-name" placeholder="enter your task">
+                                </form>
+                            </div>
+                            <img class="del-task-item" src="Assets/delete_black.svg">
+                        </li> -->
+                                 
+                        
+                    </ul>
+
+                    
                 </div>
 
 
                 <div class="task-menu">
-                    <button class="plus-btn"><img class="plus" src="Assets/plus.png" alt="plus"></button>
-                    <button class="clean-btn"><img class="clean" src="Assets/clean.png" alt="clean"></button>
+                    <button  class="plus-btn"><img class="plus" src="Assets/plus.png" alt="plus"></button>
+                    <button onclick="cleanTasks()" class="clean-btn"><img class="clean" src="Assets/clean.png" alt="clean"></button>
                 </div>
             </div>
         </div>

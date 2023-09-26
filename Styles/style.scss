@@ -49,7 +49,7 @@ body{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 12px 0;
+                    padding: 12px 5px;
                     .to-do-list{
                         font-size:1.8rem;
                         font-weight: 500;
@@ -59,6 +59,7 @@ body{
                         border: none;
                         background: none;
                         cursor: pointer;
+                        
                         .search{
                             width: 20px;
                             height: 20px;
@@ -67,6 +68,33 @@ body{
                     }
                     
                     
+                }
+                .search-list{
+                    display: none;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 8px 5px;
+                    .search-input{
+                        width: 80%;
+                        border-radius: 10px;
+                        height: 35px;
+                        padding-left: 10px;
+                        font-weight: 500;
+                        font-size: 0.95rem;  
+                                              
+                        
+                    }
+                    .close-button{
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                        
+                        
+                        .close{
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
                 }
                 
             }
@@ -77,7 +105,7 @@ body{
 
                 ul {                
                     display: flex;
-                    flex-direction: column-reverse;
+                    flex-direction: column;
                     li{
                         display: flex;
                         justify-content: space-between;
@@ -105,15 +133,24 @@ body{
                 }
 
                 ul li:hover{
-                    background:#e2e2e2;;
+                    background:#e2e2e2;
                 }
                 #create-todo-message{
                     height: 100%;
-                    display: flex;
+                    display: none;
                     justify-content: center;
                     align-items: center;
                     color: #a7a7a7;
                     font-size: 25px;
+                    font-weight: 500;
+                }
+                #notFound{
+                    height: 100%;
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    color: #a7a7a7;
+                    font-size: 20px;
                     font-weight: 500;
                 }
 
@@ -150,6 +187,9 @@ body{
             box-shadow: 5px 5px 20px #eaeaea;
             margin-left: 30px;            
             padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             .task-title{
                 height: 14%;
                 display: flex;
@@ -164,14 +204,41 @@ body{
                     border: none;
                     outline: none;
                     background: none;
+                    cursor: pointer;
                     .title-search1{
                         width: 25px;
                         height: 25px;
                     }
                 }
             }
+            .search-task-items{
+                height: 14%;
+                display: none;
+                align-items: center;
+                justify-content: space-between;
+                .task-item-search{
+                    width: 80%;
+                    border-radius: 10px;
+                    height: 38px;
+                    padding-left: 10px;
+                    font-weight: 500;
+                    font-size: 1rem; 
+                }
+                .clear-button{
+                    cursor: pointer;
+                    border: none;
+                    background:none;
+                    .clearbtn{
+                        width: 24px;
+                        height: 24px;
+                        
+                    }
+                }
+            }
             #task-content{
-                height: 76%;
+                flex-grow: 1;
+                margin-top: 10px;
+                margin-bottom: 10px;
                 #select-todo-message{
                     height: 100%;
                     display: flex;
@@ -180,6 +247,57 @@ body{
                     color: #a7a7a7;
                     font-size: 30px;
                     font-weight: 500;
+                }
+                #result-not-found{
+                    display: none;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    color: #a7a7a7;
+                    font-size: 30px;
+                    font-weight: 500;
+
+                }
+                #task-items-container{
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;;
+                    .task-item{
+                        background-color:#e2e2e2;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 8px;
+                        border-radius: 3px;
+                        padding: 0.5rem;
+                        cursor: pointer;
+                        position: relative;
+                        display: none;
+                        .input-fields{
+                            display: flex;
+                            align-items: center;
+                            .checkbox{
+                                margin-top: 1px;
+                                cursor: pointer;
+                            }
+                            .item-name{
+                                outline: none;
+                                border: none;
+                                background: inherit;
+                                margin-left: 15px;
+                                font-size: 16px;
+                                
+                                }   
+                        }
+                            
+                            
+                        .del-task-item{
+                            width: 21px;
+                            height: 21px;
+                            
+                        }
+                        
+                    }
                 }
             }
             .task-menu{
