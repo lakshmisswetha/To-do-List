@@ -8,7 +8,7 @@ const taskItemContainer = document.getElementById("task-items-container");
 
 
 
-
+var inputCounter = 0;
 const imageUrl = "Assets/delete_black.svg"; 
 const hoverUrl = "Assets/delete_red.svg";
 var taskArray = [];
@@ -92,6 +92,7 @@ listItems.addEventListener("click",function(e){
             taskItemContainer.innerHTML='';
             selectTodoMessage.textContent = "Select To-do List";
             selectTodoMessage.style.display = "flex";
+            
         }
         
         
@@ -101,12 +102,15 @@ listItems.addEventListener("click",function(e){
         taskItemContainer.innerHTML = "";
         selectTodoMessage.textContent = "Add Todo";
        
+        
+       
 
         var tasksDataArray = getTasksData();
         var len = tasksDataArray.length;
         for (let i=0; i<len; i++){
             if (tasksDataArray[i].taskName === e.target.textContent){
                 var num = tasksDataArray[i].itemsName.length;
+                inputCounter = num;
                 var index = i;
                 
             }
@@ -133,6 +137,7 @@ listItems.addEventListener("click",function(e){
             
         }
 
+        updateID();
 
         
 
@@ -168,10 +173,12 @@ listItems.addEventListener("click",function(e){
 
 //creating new task items  on clicking the plus button
 function addTaskItem(){
+    
     if (titleText.textContent === ""){
         alert("Select a To-do to add task!!");
         return;
     }
+    inputCounter++;
     
 
     selectTodoMessage.style.display = "none";
@@ -195,6 +202,7 @@ function addTaskItem(){
     input.setAttribute("type", "text");
 	input.className = "item-name";
     input.placeholder = "enter your task";
+    input.id = inputCounter;
     input.focus();
     
    
@@ -254,6 +262,9 @@ function addTaskItem(){
 
         if (e.target.tagName === "IMG"){
             e.target.parentElement.remove();
+            
+            
+            
             if (taskItemContainer.innerHTML===""){
                 selectTodoMessage.style.display = "flex";
             }
@@ -267,7 +278,10 @@ function addTaskItem(){
                 }
                 
                 localStorage.setItem("tasksData",JSON.stringify(tasksData));
-            }
+                
+            }     
+            
+            
         }        
     })
 
@@ -305,6 +319,7 @@ function deleteTaskGroup(taskGroupToDelete){
 
 function cleanTasks(){
     taskItemContainer.innerHTML = "";
+    inputCounter = 0;
     var tasksData = getTasksData();
     var taskTitle = document.querySelector("#title-text");
     for (let i=0; i<tasksData.length; i++){
@@ -316,9 +331,11 @@ function cleanTasks(){
     }
     
     localStorage.setItem("tasksData",JSON.stringify(tasksData));
+    
     selectTodoMessage.style.fontSize = "27px";
     selectTodoMessage.textContent = "Add Todo";
     selectTodoMessage.style.display = "flex";
+    updateID();
 }
 
 
@@ -328,9 +345,11 @@ document.querySelector("#task-items-container").addEventListener("submit",(e)=>{
     e.preventDefault();  
     
     saveItems ();
+    updateID();
     e.target.querySelector(".item-name").blur(); 
     
 });
+
 
 //storing taskname : [item1, item2, ..] in task array  
 function saveItems () {
@@ -344,11 +363,21 @@ function saveItems () {
 
         var existingTask = taskArray.find(task => task.taskName === titleText.textContent);
         if (existingTask){
+
+            var itemIndex = existingTask.itemsName.findIndex(item => item.id === document.activeElement.id )
+            
             if(!existingTask.itemsName.includes(document.activeElement.value)){
-                existingTask.itemsName.push({
-                    name: document.activeElement.value,
-                    checked: false
-                });
+                if ( itemIndex !== -1){
+                    existingTask.itemsName[itemIndex].name = document.activeElement.value;
+                }else{
+                        existingTask.itemsName.push({
+                        id: document.activeElement.id,
+                        name: document.activeElement.value,
+                        checked: false
+                    });
+                }
+
+                
             }
             else{
                 alert("Task already exists ! ")
@@ -360,8 +389,10 @@ function saveItems () {
 
                 itemsName : [
                     {
+                        id: document.activeElement.id,
                         name : document.activeElement.value,
-                        checked : false
+                        checked : false,
+                        
                     }
                 ]
             };
@@ -371,6 +402,29 @@ function saveItems () {
     }
 
 }
+
+
+function updateID(){
+    
+    var taskArray = getTasksData();
+    var existingTask = taskArray.find(task => task.taskName === titleText.textContent);
+    if (existingTask){
+        const inputFields = document.querySelectorAll(".item-name");
+        inputFields.forEach(input=>{
+            const id = input.id;
+            const name = input.value;
+            console.log(id);
+
+
+            const itemToUpdate = existingTask.itemsName.find(item=>item.name === name);
+            if(itemToUpdate){
+                itemToUpdate.id = id;
+            }
+        })
+        localStorage.setItem("tasksData",JSON.stringify(taskArray));
+    }
+}
+
 
 
 
